@@ -1,0 +1,22 @@
+export const COLORS = {
+    red:"red",
+    vanillaCream:"#fdf5e6",
+    lime:"lime",
+    green:"green",
+    white:"#ffff",
+    pinkPearl:"#FFF2D7",
+    blue:"blue",
+    greyPearl:"#F6F5F2",
+    tomato:"tomato",
+    transparent:"transparent",
+    yellow:"yellow",
+    black:"black",
+    pureWhite:"#fff",
+    orange:"#FF844B",
+    turquoise:"#00DFA2",
+    gray:"gray",
+    creamOrange:"#FF844B",
+    peach:"#FFE9DE",
+    dimGray: "#696969",
+    pink:"#FFA3AB"
+};
