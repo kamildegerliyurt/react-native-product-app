@@ -11,8 +11,6 @@ const styles = StyleSheet.create({
     marginTop:30,
   },
   topContainer: {
-    // flex:1,
-    // borderWidth:2,
     width:"100%",
     paddingHorizontal:5,
     backgroundColor:COLORS.creamOrange,
@@ -23,7 +21,6 @@ const styles = StyleSheet.create({
   
   },
   handleContainer: {
-    // borderWidth:2,
     flexDirection:"row",
   },
   handleText: {
@@ -35,7 +32,6 @@ const styles = StyleSheet.create({
     color:COLORS.white,
   },
   nameContainer: {
-    // borderWidth:2,
     padding:5,
   },
   nameText: {
@@ -44,14 +40,12 @@ const styles = StyleSheet.create({
     color:COLORS.white,
   },
   searchBarContainer: {
-    // borderWidth:2,
     alignItems:"center",
     justifyContent:"space-between",
     flexDirection:"row",
     paddingRight:5,
   },
   textInputContainer: {
-    // borderWidth:2,
     alignItems:"center",
     justifyContent:"center",
     width:"90%",
@@ -64,16 +58,13 @@ const styles = StyleSheet.create({
     alignSelf:"flex-start",
   },
   categoriesContainer: {
-    // flex:2,
     marginTop:5,
-    // borderWidth:2,
     width:"100%",
     alignItems:"center",
     justifyContent:"center",
   },
   seeAllContainer: {
     flexDirection:"row",
-    // borderWidth:2,
     width:"100%",
     alignItems:"center",
     justifyContent:"space-between",
@@ -96,11 +87,9 @@ const styles = StyleSheet.create({
     alignItems:"center",
     justifyContent:"center",
     width:"100%",
-    // borderWidth:2,
   },
  
   categoryView: {
-    // borderWidth:2,
     width:140,
     margin:7,
     alignItems:"center",
@@ -110,7 +99,6 @@ const styles = StyleSheet.create({
     
   },
   titleText: {
-    // borderWidth:2,
     textAlign:"center",
     margin:15,
     textAlign:"center",
@@ -124,26 +112,18 @@ const styles = StyleSheet.create({
     justifyContent:"center",
   },
   popularProductsContainer: {
-    // flex:2,
-    // borderWidth:2,
     marginTop:5,
-    // borderWidth:2,
     width:"100%",
     alignItems:"center",
     justifyContent:"center",
   },
   productCategoryView: {
-        // borderWidth:2,
         width:160,
         margin:10,
-        // alignItems:"center",
-        // justifyContent:"center",
         backgroundColor:COLORS.peach,
         borderRadius:10,
-        // marginRight:30,
   },
   productTitleText:{
-        // borderWidth:2,
         textAlign:"center",
         margin:15,
         width:"40%",
@@ -154,7 +134,6 @@ const styles = StyleSheet.create({
         color:COLORS.dimGray,
   },
     popularProductsTitleText: {
-      // borderWidth:2,
       width:"100%",
       marginTop:5,
       paddingLeft:5,
@@ -164,7 +143,6 @@ const styles = StyleSheet.create({
       
     },
     popularProductsGramText: {
-      // borderWidth:2,
       width:"100%",
       paddingLeft:5,
       fontSize:16,
@@ -173,7 +151,6 @@ const styles = StyleSheet.create({
 
     },
     priceImageContainer: {
-      // borderWidth:2,
       width:"100%",
       paddingVertical:10,
       flexDirection:"row",
@@ -188,8 +165,6 @@ const styles = StyleSheet.create({
       paddingLeft:5,
     },
     recommendationContainer: {
-          // flex:2,
-          // borderWidth:2,
           marginTop:5,
           width:"100%",
           alignItems:"center",
@@ -202,11 +177,7 @@ const styles = StyleSheet.create({
       backgroundColor:COLORS.white,
     },
     namePopularContainer:{
-      // flex:1,
-          // borderWidth:2,
     width:"100%",
-    // alignItems:"center",
-    // justifyContent:"center",
     paddingHorizontal:20,
     backgroundColor:COLORS.creamOrange,
     paddingVertical:10,
@@ -215,12 +186,10 @@ const styles = StyleSheet.create({
     top: -25 
     },
     namePopularTopContainer: {
-      // borderWidth:2,
       width:"75%",
       alignItems:"center",
       justifyContent:"space-between",
       flexDirection:"row",
-      // paddingVertical:10,
     },
     namePopularTopText: {
       fontSize:20,
@@ -233,13 +202,11 @@ const styles = StyleSheet.create({
     },
     popularProductsItemContainer: {
       flex:1,
-      // borderWidth:2,
       width:"100%",
       alignItems:"center",
       justifyContent:"center",
     },
     PopularProductsCategoryView: {
-          // borderWidth:2,
       width:120,
       margin:5,
       alignItems:"center",
@@ -261,7 +228,6 @@ const styles = StyleSheet.create({
       resizeMode:"cover",
     },
     profileText: {
-      // borderWidth:2,
       textAlign:"center",
       fontSize:30,
       fontWeight:"bold",
@@ -272,7 +238,6 @@ const styles = StyleSheet.create({
       flex:1,
       alignItems:"center",
       justifyContent:"center",
-      // backgroundColor:COLORS.pink,
     },
     productDetailsTopContainer: {
       flex:1,
@@ -365,7 +330,6 @@ const styles = StyleSheet.create({
       flex:1,
       alignItems:"center",
       justifyContent:"center",
-      // backgroundColor:COLORS.white,
     },
     shopPageImage: {
       width:200,
