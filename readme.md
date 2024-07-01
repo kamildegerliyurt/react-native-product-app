@@ -11,7 +11,7 @@
 
 
 
-<img src="https://github.com/kamildegerliyurt/FoodAppProject/assets/139812195/dbf18bbb-c867-4661-a77f-6a375cb12d9b" width="200" height="400" />
+<img src="https://github.com/kamildegerliyurt/react-native-product-app/assets/139812195/970b30db-600c-456f-87c0-d54f3a48735e" width="200" height="400" />
 
 <img src="https://github.com/kamildegerliyurt/FoodAppProject/assets/139812195/6285601c-18cc-4f07-a9f1-30d5e212eefc" width="200" height="400" />
 
