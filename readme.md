@@ -15,10 +15,9 @@
 
 <img src="https://github.com/kamildegerliyurt/react-native-product-app/assets/139812195/0ec4ea8e-69d0-40dd-884e-ca6cbb6c2ed5" width="200" height="400" />
 
+<img src="https://github.com/kamildegerliyurt/react-native-product-app/assets/139812195/ca576eed-79bc-4885-822c-f60594290c6f" width="200" height="400" />
 
 <img src="https://github.com/kamildegerliyurt/react-native-product-app/assets/139812195/42937d24-4e8a-48c7-b292-f63ac2732847" width="200" height="400" />
-
-<img src="https://github.com/kamildegerliyurt/react-native-product-app/assets/139812195/ca576eed-79bc-4885-822c-f60594290c6f" width="200" height="400" />
 
 
 <img src="https://github.com/kamildegerliyurt/react-native-product-app/assets/139812195/e3cd9742-e3f3-4dd4-8493-3935ba85183d" width="200" height="400" />
