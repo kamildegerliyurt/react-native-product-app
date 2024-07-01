@@ -13,12 +13,10 @@
 
 <img src="https://github.com/kamildegerliyurt/react-native-product-app/assets/139812195/970b30db-600c-456f-87c0-d54f3a48735e" width="200" height="400" />
 
-<img src="https://github.com/kamildegerliyurt/FoodAppProject/assets/139812195/6285601c-18cc-4f07-a9f1-30d5e212eefc" width="200" height="400" />
+<img src="https://github.com/kamildegerliyurt/react-native-product-app/assets/139812195/ca576eed-79bc-4885-822c-f60594290c6f" width="200" height="400" />
 
-<img src="https://github.com/kamildegerliyurt/FoodAppProject/assets/139812195/9d64ac04-3cc1-408a-be0b-f23356678cd5" width="200" height="400" />
+<img src="https://github.com/kamildegerliyurt/react-native-product-app/assets/139812195/42937d24-4e8a-48c7-b292-f63ac2732847" width="200" height="400" />
 
-<img src="https://github.com/kamildegerliyurt/FoodAppProject/assets/139812195/91ba374d-7b05-4a41-8a85-dc55ac2c5258" width="200" height="400" />
-<img src="https://github.com/kamildegerliyurt/FoodAppProject/assets/139812195/e40878dc-ca17-481f-babc-15107b188821" width="200" height="400" />
-<img src="https://github.com/kamildegerliyurt/FoodAppProject/assets/139812195/49adc936-5e2c-417b-93f3-448c6d01c227" width="200" height="400" />
+<img src="https://github.com/kamildegerliyurt/react-native-product-app/assets/139812195/0ec4ea8e-69d0-40dd-884e-ca6cbb6c2ed5" width="200" height="400" />
+<img src="https://github.com/kamildegerliyurt/react-native-product-app/assets/139812195/e3cd9742-e3f3-4dd4-8493-3935ba85183d" width="200" height="400" />
 
-<img src="https://github.com/kamildegerliyurt/FoodAppProject/assets/139812195/22c3c5f7-abf9-4567-93b8-0f329f1c7719" width="200" height="400" />
