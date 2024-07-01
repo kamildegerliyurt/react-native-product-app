@@ -34,7 +34,7 @@ const handleButton = (item)=> {
 }
 // //------------------------------
 const [productData, setProductData] = useState(shuffleArray([...data]));
-// const [productData, setProductData]= useState(data)
+
 
 
   return (
