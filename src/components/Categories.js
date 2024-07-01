@@ -4,7 +4,7 @@ import React from 'react'
 import styles from "../constants/styles"
 
 import { useState, useEffect } from 'react'
-// import axios from 'axios'
+
 
 
 import data from "../utils/data"
@@ -14,16 +14,6 @@ import { useNavigation } from '@react-navigation/native'
 
 
 const Categories = (props) => {
-// //------------------------------
-// const [productData, setProductData]= useState([])
-// //------------------------------
-
-// useEffect(() => {
-//     axios.get("https://fakestoreapi.com/products")
-//       .then((res)=> {
-//           setProductData(res.data)
-//       })
-//   }, [])
 // //------------------------------
 const navigation = useNavigation();
 //------------------------------
@@ -36,7 +26,7 @@ const handleButton = (item)=> {
 }
 // //------------------------------
 const [productData, setProductData]= useState([...data])
-// const [productData, setProductData]= useState(data)
+
 
 
 
