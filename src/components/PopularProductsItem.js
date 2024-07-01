@@ -22,7 +22,7 @@ const otherHandleButton = (item)=> {
 }
 // //------------------------------
 const [productData, setProductData]= useState([...data])
-// const [productData, setProductData]= useState(data)
+
 
 
   return (
