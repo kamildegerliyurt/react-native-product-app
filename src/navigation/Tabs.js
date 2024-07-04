@@ -23,8 +23,6 @@ const Tabs = () => {
   return (
     <Tab.Navigator
       screenOptions={{headerShown: false,
-                      // tabBarActiveTintColor: '#5F0B65',
-                      // tabBarActiveBackgroundColor: '#5F0B65',
                       tabBarActiveTintColor: 'tomato',
                       tabBarActiveBackgroundColor: '#FF844B',
                       tabBarInactiveBackgroundColor: 'red',
@@ -66,8 +64,6 @@ const Tabs = () => {
 
       <Tab.Screen options={{tabBarIcon: 
                                         tabBarIcon(Ionicons, 'newspaper-outline'), 
-                                        // tabBarActiveBackgroundColor: '#45014A',
-                                        // tabBarActiveTintColor: 'purple',
                                         tabBarActiveBackgroundColor: '#FF844B',
                                         tabBarActiveTintColor: 'tomato',
                           }}
