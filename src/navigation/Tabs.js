@@ -1,62 +1,93 @@
 import React from 'react';
+import { View, Text } from 'react-native';
+import { ProductList, ProductDetails, ShopPage, Profile, ProductAllPage } from '../screens';
+
+import { AntDesign, Ionicons,Feather } from '@expo/vector-icons';
+import { BottomFabBar } from 'rn-wave-bottom-bar';
 
 
-import {ProductList, ProductDetails, ShopPage,Profile, ProductAllPage} from "../screens/index"
-
-import { AntDesign } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-
-  
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 const Tab = createBottomTabNavigator();
 
+const tabBarIcon = (IconComponent, iconName) => ({color, size }) => (
+  <IconComponent name={iconName} size={size} color={color} />
+);
+
+const generateScreen = (screenName) => () => (
+  <View>
+    <Text>{screenName}</Text>
+  </View>
+);
 
 const Tabs = () => {
   return (
-    <Tab.Navigator screenOptions={{
-                      headerShown:false,
-                      tabBarShowLabel:false,
-                      tabBarStyle:{backgroundColor:'#F5F7F8', }}}>
-                        
+    <Tab.Navigator
+      screenOptions={{headerShown: false,
+                      // tabBarActiveTintColor: '#5F0B65',
+                      // tabBarActiveBackgroundColor: '#5F0B65',
+                      tabBarActiveTintColor: 'tomato',
+                      tabBarActiveBackgroundColor: '#FF844B',
+                      tabBarInactiveBackgroundColor: 'red',
+                    }}
 
-    <Tab.Screen name='ProductList' 
-                component={ProductList}
-                options={{tabBarIcon:({focused})=>(<AntDesign name="home" 
-                                                              size={30} 
-                                                              color={focused ? "tomato" : "gray"} />)}}/>      
+      tabBar={(props) => (<BottomFabBar
+                                        mode={'square' | 'default'}
+                                        isRtl={false}
+                                        focusedButtonStyle={{shadowColor: '#000',
+                                                            shadowOffset: {
+                                                                              width: 0,
+                                                                              height: 7,
+                                                                            },
+                                                            shadowOpacity: 0.41,
+                                                            shadowRadius: 9.11,
+                                                            elevation: 14,
+                                                            }}
+
+                                        bottomBarContainerStyle={{// position: 'absolute',
+                                                                  bottom: 0,
+                                                                  left: 0,
+                                                                  right: 0,
+                                                                }}
+                                        {...props}
+                                      />
+                                    )}>
+                                      
+
+      <Tab.Screen options={{tabBarIcon: tabBarIcon(AntDesign, 'home'),}}
+                  name="ProductList"
+                  component={ProductList}/>
 
 
-    <Tab.Screen name='ProductDetails'
+      <Tab.Screen name="ProductDetails"
                   component={ProductDetails}
-                  options={{ tabBarButton: () => null }}/>
+                  options={{tabBarButton: () => null, }}/>
 
 
-    <Tab.Screen name='ProductAllPage' 
-                component={ProductAllPage}
-                options={{tabBarIcon:({focused})=>(<Ionicons name="newspaper-outline" 
-                                                             size={30} 
-                                                             color={focused ? "tomato" : "gray"} />)}}/>      
+
+      <Tab.Screen options={{tabBarIcon: 
+                                        tabBarIcon(Ionicons, 'newspaper-outline'), 
+                                        // tabBarActiveBackgroundColor: '#45014A',
+                                        // tabBarActiveTintColor: 'purple',
+                                        tabBarActiveBackgroundColor: '#FF844B',
+                                        tabBarActiveTintColor: 'tomato',
+                          }}
+                  name="ProductAllPage"
+                  component={ProductAllPage}/>
 
 
-    <Tab.Screen name='ShopPage' 
-                component={ShopPage}
-                options={{tabBarIcon:({focused})=>(<Feather name="shopping-cart" 
-                                                            size={30} 
-                                                            color={focused ? "tomato" : "gray"} />)}}/>      
+
+      <Tab.Screen options={{ tabBarIcon: tabBarIcon(Feather, 'shopping-cart') }}
+                  name="ShopPage"
+                  component={ShopPage}/>
 
 
-    
-    <Tab.Screen name='Profile' 
-                component={Profile}
-                options={{tabBarIcon:({focused})=>(<AntDesign name="user" 
-                                                              size={30} 
-                                                              color={focused ? "tomato" : "gray"} />)}}/>      
+      <Tab.Screen options={{ tabBarIcon: tabBarIcon(AntDesign, 'user') }}
+                  name="Profile"
+                  component={Profile}/>
 
-
-</Tab.Navigator>
+      
+    </Tab.Navigator>
   );
-}
+};
 
 export default Tabs;

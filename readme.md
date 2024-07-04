@@ -10,120 +10,291 @@ npm install @reduxjs/toolkit react-redux @react-navigation/native @react-navigat
  npx expo install react-native-keyboard-aware-scroll-view
 
 
- -------------------------------------------------------
+ ------------------------------------------------------- TABBAR SCREEN
 
- import { StyleSheet, Text, View, Image, Pressable,} from 'react-native'
-import React from 'react'
-
-
-import styles from "../constants/styles"
-import { SafeAreaView } from 'react-native-safe-area-context';
-
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-import { CheckBox } from 'react-native-elements';
-
-import { useState } from 'react';
-
-import { useNavigation } from '@react-navigation/native';
+import React from 'react';
 
 
-import { LinearGradient } from 'expo-linear-gradient';
+import {ProductList, ProductDetails, ShopPage,Profile, ProductAllPage} from "../screens/index"
 
-
-const ProductDetails = ({ route }) => {
- //----------------------------------
- const total = route.params.data
- const title = total.title
- const price = total.price
- const image = total.image
- const gramMl = total.gram_ml
- const detail = total.detail
- //----------------------------------
- const [checked, setChecked]= useState(false)
-
-  const handleHeartPress = ()=> {
-    setChecked(!checked)
-  }
-//--------------------------------------------
-const navigation = useNavigation();
-
-const backButton = ()=> {
-  navigation.navigate("ProductList")
-}
-// //--------------------------------------------
-
-  return (
-    <LinearGradient colors={['#FFA1AB','#FFA3AB',"#FE8D97","#FC7F8B","#FD737E",'#8B0000']}
-                    style={{flex:1,}}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 1 }}>
-
-      <SafeAreaView style={styles.productDetailsContainer}>
-
-
-
-        <View style={styles.productDetailsTopContainer}>
-
-          <Pressable style={({pressed})=> [{transform: [{translateX: pressed ? 1 : 5}]}]} 
-                    onPress={backButton}>
-            <MaterialCommunityIcons name="arrow-left-bold-box" size={50} color="white" /> 
-          </Pressable>
-
-          <CheckBox checked={checked}
-                    checkedIcon="heart"
-                    uncheckedIcon="heart-o"     
-                    checkedColor='red'
-                    uncheckedColor='white'
-                    size={30}  
-                    onPress={handleHeartPress}/>  
-        </View>
-
-
-
-        <View style={styles.productDetailsImageContainer}>   
-          <Image style={styles.productDetailsImage} source={image}/>
-        </View>
-
-
-
-        <View style={styles.productDetailsTextContainer}>
-
-          <View style={styles.titlePriceTextContainer}>
-            <Text style={styles.productDetailsTitleText}>{title}</Text>
-            <Text style={styles.productDetailsPriceText}>${price}</Text>
-          </View>
-
-          <View style={styles.gramMlContainer}>
-            <Text style={styles.gramMlText}>{gramMl}</Text>
-          </View>
-
-          <View style={styles.detailContainer}>
-            <Text style={styles.productDetailsDetailText} numberOfLines={10} ellipsizeMode='tail'>{detail}</Text>
-          </View>
-
-
-
-          <LinearGradient colors={["#FB606D",'#FD737E', '#FC7F8B', '#FE8D97', '#FFA3AB', '#FFA1AB']}
-                          style={styles.linearButtonContainer}
-                          start={{ x: 0, y: 0 }}
-                          end={{ x: 1, y: 1 }}>
-            <Pressable style={({pressed})=> [{transform: [{translateY: pressed ? 3: 0}]}]}>
-                  <Text style={styles.addToCartText}>Add to cart</Text>
-            </Pressable>
-          </LinearGradient>
-
-
-        </View>
-
-
+import { AntDesign } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
   
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-      </SafeAreaView>
-    </LinearGradient>
-  )
+const Tab = createBottomTabNavigator();
+
+
+const Tabs = () => {
+  return (
+    <Tab.Navigator screenOptions={{
+                      headerShown:false,
+                      tabBarShowLabel:false,
+                      tabBarStyle:{backgroundColor:'#F5F7F8', }}}>
+                        
+
+    <Tab.Screen name='ProductList' 
+                component={ProductList}
+                options={{tabBarIcon:({focused})=>(<AntDesign name="home" 
+                                                              size={30} 
+                                                              color={focused ? "tomato" : "gray"} />)}}/>      
+
+
+    <Tab.Screen name='ProductDetails'
+                  component={ProductDetails}
+                  options={{ tabBarButton: () => null }}/>
+
+
+    <Tab.Screen name='ProductAllPage' 
+                component={ProductAllPage}
+                options={{tabBarIcon:({focused})=>(<Ionicons name="newspaper-outline" 
+                                                             size={30} 
+                                                             color={focused ? "tomato" : "gray"} />)}}/>      
+
+
+    <Tab.Screen name='ShopPage' 
+                component={ShopPage}
+                options={{tabBarIcon:({focused})=>(<Feather name="shopping-cart" 
+                                                            size={30} 
+                                                            color={focused ? "tomato" : "gray"} />)}}/>      
+
+
+    
+    <Tab.Screen name='Profile' 
+                component={Profile}
+                options={{tabBarIcon:({focused})=>(<AntDesign name="user" 
+                                                              size={30} 
+                                                              color={focused ? "tomato" : "gray"} />)}}/>      
+
+
+</Tab.Navigator>
+  );
 }
 
-export default ProductDetails
+export default Tabs;
 
+---------------------------------------------------- 2.tabbar animated
+import React from 'react';
+import { View } from 'react-native';
+
+import { ProductList, ProductDetails, ShopPage, Profile, ProductAllPage } from '../screens';
+
+
+import { AntDesign, Feather, Ionicons } from '@expo/vector-icons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
+const Tab = createBottomTabNavigator();
+
+const Tabs = () => {
+  return (
+    <Tab.Navigator 
+      screenOptions={{
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          backgroundColor: '#F5F7F8',
+          marginVertical: 10,
+          marginHorizontal: 10,
+          borderRadius: 30,
+        },
+      }}>
+        
+      <Tab.Screen
+        name="ProductList"
+        component={ProductList}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 45,
+              height: 45,
+              borderRadius: 25,
+              backgroundColor: focused ? 'tomato' : 'transparent',
+            }}>
+              <AntDesign name="home" size={30} color={focused ? 'white' : 'gray'} />
+            </View>
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="ProductDetails"
+        component={ProductDetails}
+        options={{ tabBarButton: () => null }}
+      />
+
+      <Tab.Screen
+        name="ProductAllPage"
+        component={ProductAllPage}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 50,
+              height: 50,
+              borderRadius: 25,
+              backgroundColor: focused ? 'tomato' : 'transparent',
+            }}>
+              <Ionicons name="newspaper-outline" size={30} color={focused ? 'white' : 'gray'} />
+            </View>
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="ShopPage"
+        component={ShopPage}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 50,
+              height: 50,
+              borderRadius: 25,
+              backgroundColor: focused ? 'tomato' : 'transparent',
+            }}>
+              <Feather name="shopping-cart" size={30} color={focused ? 'white' : 'gray'} />
+            </View>
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 50,
+              height: 50,
+              borderRadius: 25,
+              backgroundColor: focused ? 'tomato' : 'transparent',
+            }}>
+              <AntDesign name="user" size={30} color={focused ? 'white' : 'gray'} />
+            </View>
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  )
+};
+
+export default Tabs;
+//---------------------------------------------------------- efsane animated bottom tabbar
+import React from 'react';
+import { View, Text } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { AntDesign } from '@expo/vector-icons';
+import { BottomFabBar } from 'rn-wave-bottom-bar';
+import { ProductList, ProductDetails, ShopPage, Profile, ProductAllPage } from '../screens';
+
+const Tab = createBottomTabNavigator();
+
+const tabBarIcon = (iconName) => ({ focused, color, size }) => (
+  <AntDesign name={iconName} size={size} color={color} />
+);
+
+const generateScreen = (screenName) => () => (
+  <View>
+    <Text>{screenName}</Text>
+  </View>
+);
+
+const Tabs = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: '#5F0B65',
+        tabBarActiveBackgroundColor: '#5F0B65',
+        tabBarInactiveBackgroundColor: 'red',
+      }}
+      tabBar={(props) => (
+        <BottomFabBar
+          mode={'square' | 'default'}
+          isRtl={false}
+          // Add Shadow for active tab bar button
+          focusedButtonStyle={{
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 7,
+            },
+            shadowOpacity: 0.41,
+            shadowRadius: 9.11,
+            elevation: 14,
+          }}
+          // - You can add the style below to show screen content under the tab-bar
+          // - It will make the "transparent tab bar" effect.
+          bottomBarContainerStyle={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+          }}
+          {...props}
+        />
+      )}
+    >
+      <Tab.Screen
+        options={{
+          tabBarIcon: tabBarIcon('aliwangwang-o1'),
+        }}
+        name="ProductList"
+        component={ProductList}
+      />
+
+      <Tab.Screen
+        name="ProductDetails"
+        component={ProductDetails}
+        options={{
+          tabBarButton: () => null, // This hides the tab but keeps it in the navigator
+        }}
+      />
+
+      <Tab.Screen
+        options={{
+          tabBarIcon: tabBarIcon('rocket1'),
+          tabBarActiveBackgroundColor: '#45014A',
+          tabBarActiveTintColor: 'purple',
+        }}
+        name="ProductAllPage"
+        component={ProductAllPage}
+      />
+
+      <Tab.Screen
+        options={{ tabBarIcon: tabBarIcon('Trophy') }}
+        name="ShopPage"
+        component={ShopPage}
+      />
+
+      <Tab.Screen
+        options={{ tabBarIcon: tabBarIcon('wallet') }}
+        name="Profile"
+        component={Profile}
+      />
+    </Tab.Navigator>
+  );
+};
+
+export default Tabs;
+//----------------------------------------------------"efsane bottom tab "DETAYLARI"
+yukarıdaki "efsane animated kaynak:
+https://github.com/Jm-Zion/rn-wave-bottom-bar?tab=readme-ov-file
+
+importları:
+npm install rn-wave-bottom-bar --save
+//----------------------------------------------------
+
+
+react-native-svg
+react-native-redash
+expo-blur
